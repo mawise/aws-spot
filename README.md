@@ -6,7 +6,7 @@ Quickly and easily spin up an aws spot instance for some processing, then kill i
 Usage
 -----
 
-Copy `aws_conf.rb.example` to `aws_conf.rb` and fill it in with you aws credentials and desired instance details.
+Copy `aws_conf.rb.example` to `aws_conf.rb` and fill it in with your aws credentials and desired instance details.
 
 Install the `aws_sdk` gem: `sudo gem instal aws_sdk`
 
