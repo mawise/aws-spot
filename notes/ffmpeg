@@ -1,0 +1,15 @@
+ffmpeg -threads 2 -f image2 -start_number 2868 -r 60 -i files/GOPR%04d.JPG -r 60 -vf "format=yuv420p" -vcodec libx264 -s 1920×1080 sunset2.mp4
+
+-threads 2        Threads per core?  Can usually skip this parameter
+-f image2         Input file format, image2==.jpg
+-start_number     For numbered files that do not start at 1 (or 0001)
+-r 60             Input frame rate (each image is a frame)
+-i GOPR%04d.JPG   Input file format, %04d is incrementing 4 digit number
+-r 60             Output frame rate (of actuall video)
+-vf               Filters, yuv420p is a pixel format that seems to work
+                           hflip,vflip will rotate the image 180
+                           example: -vf "hflip,vflip,format=yuv420p"
+-vcodec libx264   Video codec, I dont know enough to try something else
+-s 1920x1080      Output resolution, optional (otherwise uses native image
+                      resolution)
+sunset2.mp4       Output filename
